@@ -39,6 +39,7 @@ login({email: config.USERNAME, password: config.PASSWORD}, function callback (er
 @amorasofia: Información del grupo \n\
 @denunciado: Te denuncia xd \n\
 @palabra: Te dice una palabra culta pa desasnarte :v \n\
+@sanmarcos: Te avisa cuanto falta para admisión \n\
             "};
           api.sendMessage(msg, event.threadID);
         }
@@ -74,6 +75,22 @@ login({email: config.USERNAME, password: config.PASSWORD}, function callback (er
         if(event.body === '@palabra') {
           request(options, get_palabra);
           msg = {body: resultado + '(Significado implementado próximamene)'};
+          api.sendMessage(msg, event.threadID);
+        }
+
+        if(event.body === '@sanmarcos') {
+          var bloque_ADF = (function() {
+            oneDay = 24 * 60 * 60 * 1000;
+            firstDate = new Date();
+            secondDate = new Date(2016, 2, 12);
+            result = firstDate.getTime() - secondDate.getTime();
+
+            return Math.round(Math.abs(result) / (oneDay));
+          })();
+
+          var bloque_BCE = bloque_ADF + 1;
+
+          msg = {body: 'No es por asustarte pulpín pero si eres bloque ADF faltan ' + bloque_ADF + ' días para tu masacre, si eres bloque BCE te faltan ' + bloque_BCE + ' días, bblb :\'v '};
           api.sendMessage(msg, event.threadID);
         }
 
