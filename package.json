@@ -1,0 +1,22 @@
+{
+  "name": "amor-a-sofia-chat-bot",
+  "version": "1.0.0",
+  "description": "Amor a Sofia fb chat bot",
+  "main": "index.js",
+  "engines": {
+    "node": "5.4.1"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:SrFuego/amor-a-sofia-chat-bot.git"
+  },
+  "author": "Manuel Jesús De la Cruz Sotelo",
+  "license": "MIT",
+  "dependencies": {
+    "facebook-chat-api": "^1.0.6",
+    "request": "^2.69.0"
+  }
+}
